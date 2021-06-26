@@ -30,6 +30,8 @@ function validaCampos(dados){
 function inserir(dados){
     if(validaCampos(dados)){ 
         var lista = document.getElementById('lista')
+        lista.classList.add('font-weight-normal')
+
         var campoTitulo = document.createElement('p')
         var campoDescri = document.createElement('p')
         var campoQuartos = document.createElement('p')
@@ -39,18 +41,19 @@ function inserir(dados){
         var campoLocalidade = document.createElement('p')
         var campoPreco = document.createElement('p')
         var campoImagem = document.createElement('img')
-        var campoEspaco = document.createElement('p')
+        campoImagem.classList.add('w-25')
+        var campoEspaco = document.createElement('hr')
 
         campoTitulo.innerHTML = "TÍTULO: " + dados.titulo
         campoDescri.innerHTML = "DESCRIÇÃO: " + dados.descricao
         campoQuartos.innerHTML = "QUARTOS: " + dados.quartos
         campoVagaGara.innerHTML = "VAGAS DE GARAGEM: " + dados.vagasGaragem
-        campoAreaTerreno.innerHTML = "ÁREA DO TERRENO: " + dados.areaTerreno + " M²"
-        campoAreaconstru.innerHTML = "ÁREA CONSTRUÍDA: " + dados.areaConstruida + " M²"
+        campoAreaTerreno.innerHTML = "ÁREA DO TERRENO: " + dados.areaTerreno + " m²"
+        campoAreaconstru.innerHTML = "ÁREA CONSTRUÍDA: " + dados.areaConstruida + " m²"
         campoLocalidade.innerHTML = "LOCALIDADE: " + dados.localidade
         campoPreco.innerHTML = "PREÇO: R$ " + dados.preco + "/mês"
         campoImagem.src = dados.imagem
-        campoEspaco.innerHTML = "_______________________________________________" 
+
 
         lista.appendChild(campoTitulo)
         lista.appendChild(campoDescri)
@@ -63,6 +66,7 @@ function inserir(dados){
         lista.appendChild(campoImagem)
         lista.appendChild(campoImagem)
         lista.appendChild(campoEspaco)
+
     } 
     else alert("Preencha todos os campos")
 }

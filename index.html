@@ -3,90 +3,84 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="styles.css">
     <title>Document</title>
 </head>
 <body>
-    <div id="pagina">
-        <header>
-            <img src="logo.png">
+    <div id="pagina" class="pagina">
+        <header class="navbar navbar-expand-lg navbar-light">
+            <a class="navbar-brand" href="index.html">
+                <img src="logo.png" class="img-fluid w-75">
+            </a>
         </header>
-        <div>
-            <h3>INSERIR ANÚNCIO</h3>
-        </div>
-
-        <div id="campos">
+        <br>
+        <div id="campos" class="container">
+            <h3 class="display-4 text-muted">INSERIR ANÚNCIO</h3>
+            <hr>
             <form onsubmit="event.preventDefault();onFormSubmit()">
 
-                <div class="campo-entrada">
+                <div class="form-group">
                     <label for="titulo">TÍTULO</label>
-                    <input type="text" name="titulo" id="titulo" required>
+                    <input class="form-control" type="text" name="titulo" id="titulo" required>
                 </div>
 
-                <div class="campo-entrada">
+                <div class="form-group">
                     <label for="titulo">DESCRIÇÃO</label>
-                    <input type="text" name="descricao" id="descricao" required>
+                    <input class="form-control" type="text" name="descricao" id="descricao" required>
                 </div>
 
-                <div class="campo-entrada">
+                <div class="form-group">
                     <label for="titulo">QUARTOS</label>
-                    <input type="number" name="quartos" id="quartos" required>
+                    <input class="form-control" type="number" name="quartos" id="quartos" required>
                 </div>
 
-                <div class="campo-entrada">
+                <div class="form-group">
                     <label for="titulo">VAGAS DE GARAGEM</label>
-                    <input type="number" name="vagas-garagem" id="vagas-garagem" required>
+                    <input class="form-control" type="number" name="vagas-garagem" id="vagas-garagem" required>
                 </div>
 
-                <div class="campo-entrada">
+                <div class="form-group">
                     <label for="titulo">ÁREA DO TERRENO</label>
-                    <input type="text" name="area-terreno" id="area-terreno" required>
+                    <input class="form-control" type="text" name="area-terreno" id="area-terreno" required>
                 </div>
 
-                <div class="campo-entrada">
+                <div class="form-group">
                     <label for="titulo">ÁREA CONSTRUÍDA</label>
-                    <input type="text" name="area-construida" id="area-construida" required>
+                    <input class="form-control" type="text" name="area-construida" id="area-construida" required>
                 </div>
 
-                <div class="campo-entrada">
+                <div class="form-group">
                     <label for="titulo">LOCALIDADE</label>
-                    <input type="text" name="localidade" id="localidade" required>
+                    <input class="form-control" type="text" name="localidade" id="localidade" required>
                 </div>
 
-                <div class="campo-entrada">
+                <div class="form-group">
                     <label for="titulo">PREÇO</label>
-                    <input type="text" name="preco" id="preco" required>
+                    <input class="form-control" type="text" name="preco" id="preco" required>
                 </div>
 
-                <div class="campo-entrada">
+                <div class="form-group">
                     <label for="titulo">IMAGEM</label>
-                    <input type="text" name="imagem" id="imagem" required>
+                    <input class="form-control" type="text" name="imagem" id="imagem" required>
                 </div>
-
-                <footer id="botoes">
-                    <div>
-                        <button class="button button-efect" type="reset">LIMPAR</button>
-                        <button class="button button-efect" type="submit">INSERIR</button>
-                    </div>
-
-                </footer>
-
+                <div class="form-group">
+                        <button class="btn btn-danger" type="reset">LIMPAR</button>
+                        <button class="btn btn-success" type="submit">INSERIR</button>
+                </div>
             </form>
 
         </div>
-        <div id="tituloLista">
-            <h3>LISTA DE ANÚNCIOS</h3>
+        <div id="tituloLista" class="container">
+            <h3 class="display-4 text-muted">LISTA DE ANÚNCIOS</h3>
+            <hr>
+            <div id="lista">
+
+            </div> 
         </div>
-        <div id="lista">
-            <ul>
-
-            </ul>
-
-        </div>
-
     </div>
 
     <script src="script.js"></script>
-    
+
 </body>
 </html>
