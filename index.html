@@ -122,35 +122,50 @@
                 adicionar(){
                     let listas = {}
 
-                     listas.titulo= this.titulo
-                     listas.descricao = this.descricao
-                     listas.quartos = this.quartos
-                     listas.vagas_garagem = this.vagas_garagem
-                     listas.area_terreno = this.area_terreno
-                     listas.area_construida = this.area_construida
-                     listas.localidade = this.localidade
-                     listas.preco = this.preco
-                     listas.imagem = this.imagem
+                    if(this.titulo === '' ||this.descricao ===''||this.quartos ===''||this.vagas_garagem ===''||this.area_terreno ===''
+                        ||this.area_construida ===''||this.localidade ===''||this.preco ===''){
+                        alert('Campos Incompletos!')
+                    }
+                    else if(this.quartos < 0 || this.vagas_garagem < 0 || this.vagas_garagem < 0 || this.area_terreno < 0){
+                        alert('Campos não podem ser menores que 0!')
+                    }
+                    else{
+                        listas.titulo= this.titulo
+                        listas.descricao = this.descricao
+                        listas.quartos = this.quartos
+                        listas.vagas_garagem = this.vagas_garagem
+                        listas.area_terreno = this.area_terreno
+                        listas.area_construida = this.area_construida
+                        listas.localidade = this.localidade
+                        listas.preco = this.preco
+                        listas.imagem = this.imagem
 
-                     let myJSON = JSON.stringify(listas)
-                     localStorage.setItem('listaJSON',myJSON)
-                    
+                        let myJSON = JSON.stringify(listas)
+                        localStorage.setItem('listaJSON',myJSON)
+                    }
                 },
                 mostrar(){
                     
-                     let dados = localStorage.getItem('listaJSON')
-                     let obj = JSON.parse(dados)
-                        document.getElementById('lista').innerHTML = 
-                            "Título " + obj.titulo + "<br>" +
-                            "Descrição " + obj.descricao + "<br>" +
-                            "Quartos " + obj.quartos + " <br>" +
-                            "Vagas de garagem " + obj.vagas_garagem + "<br>" +
-                            "Área do terreno " + obj.area_terreno + "<br>" +
-                            "Área construida " + obj.area_construida + "<br>" +
-                            "Localidade " + obj.localidade + "<br>" + 
-                            "Preço " + obj.preco + "<br>" +
-                            "Imágem " + obj.imagem + "<br>"
+                    let dados = localStorage.getItem('listaJSON')
+                    let obj = JSON.parse(dados)
+                    var campoImg = document.createElement('img')
+                    campoImg.classList.add('w-25')
+                    campoImg.src = obj.imagem
                     
+
+                    var lista = document.getElementById('lista')
+                    lista.innerHTML =
+                        "TÍTULO: " + obj.titulo + "<br>" +
+                        "DESCRIÇÃO: " + obj.descricao + "<br>" +
+                        "QUARTOS: " + obj.quartos + " <br>" +
+                        "VAGAS DE GARAGEM: " + obj.vagas_garagem + "<br>" +
+                        "ÁREA DO TERRENO: " + obj.area_terreno + " m²" + "<br>" +
+                        "ÁREA CONSTRUIDA: " + obj.area_construida + " m²" + "<br>" +
+                        "LOCALIDADE: " + obj.localidade + "<br>" + 
+                        "PREÇO: " + obj.preco + "<br>"
+                            
+                    lista.appendChild(campoImg)
+
                 },
             },
 
